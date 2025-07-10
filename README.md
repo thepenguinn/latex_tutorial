@@ -64,6 +64,65 @@ determines the commands that are available and the way the final document is ren
 
 # Basic formatting
 
+## Sections and subsections
+
+The way one would divide a document is using `\*section{section name}` commands.
+
+```latex
+\section{Name of the section}
+
+\subsection{Name of the sub-section}
+
+\subsubsection{Name of the sub-sub-section}
+```
+
+## Text enhancements
+
+### Bold face
+
+```latex
+\textbf{This text is in bold.}
+```
+
+### Italic face
+
+```latex
+\textit{This text is in italics.}
+```
+There's also `\emph{}` to emphasize text. But if you always want the text to be
+in italics, use `\textit{}`.
+
+### Small caps face
+
+```latex
+\textsc{This text is in small caps.}
+```
+
+### Teletype face
+
+```latex
+\texttt{This text is in teletype.}
+```
+
+### Underline
+
+```latex
+\underline{This text is in bold.}
+```
+
+> [!NOTE]<Br>
+> You can also combine these.
+
+### Quotes
+
+`'` and `"` corresponds to the closing quotes. For the opening quotes you need to use
+the grave sign `\``.
+
+```latex
+``This is a Quote."
+`This is also a Quote.'
+```
+
 # Label and refer
 
 # Including images
