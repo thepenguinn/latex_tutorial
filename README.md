@@ -127,10 +127,16 @@ the grave sign `\``.
 
 # Including images
 
+# Mathematics
+
+# Code listing
+
 # Tables
 
 # Drawing
 
 # Plotting
+
+# Bibliography
 
 # Miscellaneous
