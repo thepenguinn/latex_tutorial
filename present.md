@@ -486,3 +486,10 @@ Then you can include links as:
 %         v                                 v  v                v
 See \href{https://en.wikipedia.org/wiki/LaTeX}{\textbf{Wikipedia}} for a general info.
 ```
+---
+
+# Footnotes
+
+```latex
+This is about something\footnote{Here's a footnote} that is really interesting.
+```
