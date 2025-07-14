@@ -462,6 +462,27 @@ int main() {
     printf("Hello World!\n");
     return 0;
 }
-
 \end{minted}
+```
+
+---
+
+# Hyperlinks
+
+Inorder to use hyperlinks in the document, you need to use `hyperref` package.
+
+You can import it as:
+
+```latex
+\usepackage{hyperref}
+```
+
+Then you can include links as:
+
+```latex
+%  Url ---+---------------------------------+  +----------------+--- Text
+%         |                                 |  |                |
+%         |                                 |  |                |
+%         v                                 v  v                v
+See \href{https://en.wikipedia.org/wiki/LaTeX}{\textbf{Wikipedia}} for a general info.
 ```
