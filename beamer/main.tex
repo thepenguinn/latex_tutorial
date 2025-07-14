@@ -1,0 +1,193 @@
+\documentclass{beamer}
+
+\usepackage{minted}
+\usepackage[size=custom,width=16,height=9,scale=0.5]{beamerposter}
+\usepackage{tcolorbox}
+
+% \usepackage{beamercolorthemedracula}
+
+\usetheme{metropolis}
+\usecolortheme{dracula}
+
+\title{An Introduction to \LaTeX}
+\date{\today}
+\author{Daniel V Mathew}
+
+\institute{RIT, Kottayam}
+
+\newcommand\alertNote[1] {
+    \begin{tcolorbox}[
+            coltitle = draculafg,
+            colbacktitle = violet,
+            colback = violet,
+            colframe = violet,
+            title=Note,
+            fonttitle=\bfseries,
+            detach title,
+        ]
+        \begin{minipage}[t]{0.18\textwidth}
+            \begin{flushleft}
+                \tcbtitle
+            \end{flushleft}
+        \end{minipage}
+        \begin{minipage}[t]{0.8\textwidth}
+            {\color{draculafg} #1}
+        \end{minipage}
+    \end{tcolorbox}
+    }
+
+\begin{document}
+\maketitle
+
+\usemintedstyle{catppuccin-mocha}
+
+\section{A Typical \LaTeX{} Document}
+
+\begin{frame}[fragile]{Document Structure}
+
+    \alert{latex} or \alert{tex} source files ends with \alert{.tex} extension.
+
+    \begin{minted}[breaklines, autogobble, linenos] {latex}
+        \documentclass[a4paper, 11pt]{article}
+        % preamble <- a comment by the way.
+
+        \begin{document}
+        % document
+
+        \end{document}
+    \end{minted}
+
+\end{frame}
+
+\begin{frame}[fragile]{Comments}
+    Comments in \LaTeX{} starts with a percent (\alert{\%}) sign.
+
+    \begin{minted}[breaklines, autogobble, linenos] {latex}
+        % Hai, this is a comment in LaTeX.
+
+        % More comments.
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Commands}
+    In \LaTeX{}, \alert{commands} are also called as \alert{macros}.
+
+    \begin{minted}[breaklines, autogobble, linenos] {latex}
+        % Optional ----+-----------+
+        % Arguments    |           |
+        %              v           v
+        \documentclass[a4paper, 11pt]{article}
+        %                             ^     ^
+        %                             |     |
+        %                             +-----+--- Arguments
+    \end{minted}
+
+    They are just like \alert{functions} in other programming languages.
+    You can define \alert{custom} commands / macros on your own (more on that later...).
+
+\end{frame}
+
+\begin{frame}[fragile]{Document Class}
+
+    Every \LaTeX{} document has a \alert{\texttt{\textbackslash documentclass}} declaration at the top.
+
+    \begin{minted}[breaklines, autogobble, linenos] {latex}
+        \documentclass[a4paper, 11pt]{article}
+        %                             ^     ^
+        %                             |     |
+        %                             +-----+-- Document Class
+    \end{minted}
+
+    There are several types:
+
+    {\begin{minipage}[t] {0.4\textwidth}
+        \begin{itemize}
+            \item article
+            \item book
+            \item report
+        \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t] {0.4\textwidth}
+        \begin{itemize}
+            \item memoir
+            \item beamer
+        \end{itemize}
+    \end{minipage}}
+
+\end{frame}
+
+\begin{frame}[fragile]{Importing Packages}
+
+    You can import various packages using \alert{\textbackslash usepackage\{\}} in \LaTeX{} like so:
+
+
+    \begin{minted}[breaklines, autogobble, linenos] {latex}
+        \documentclass[a4paper, 11pt]{article}
+
+        \usepackage[margin = 0.4in]{geometry}
+
+        \begin{document}
+
+        % Document content goes here.
+
+        \end{document}
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Environments}
+
+    Environments in \LaTeX{} starts with \alert{\textbackslash begin\{\}} and ends with \alert{\textbackslash end\{\}}.
+
+    \begin{minted}[breaklines, autogobble, linenos] {latex}
+        %                 +--------+-------------+
+        %                 |        |             |  tabularx
+        %                 v        v             |  environment
+        \begin{tabularx} {\textwidth} {ccc} %  |
+        %                               ^  ^     |
+        %                               |  |     |
+        %                               +--+-----+--- More Arguments
+        % Content specific to the
+        % environment goes inside here.
+        \end{tabularx}
+    \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Another Environment Example}
+    \begin{minted}[breaklines, autogobble, linenos] {latex}
+        %                                           figure
+        \begin{figure} [h]  %                      environment
+        %               ^ ^
+        %               | |
+        %               +-+-------------+--- Optional arguments
+
+        % Content specific to the
+        % environment goes inside here.
+
+        \end{figure}
+    \end{minted}
+
+    % \alertNote{We'll see these environments later.}
+
+\end{frame}
+
+\begin{frame}[fragile]{Chapters, sections and more...}
+    \begin{minted}[breaklines, autogobble, linenos] {latex}
+        \chapter{Name of the chapter}
+
+        \section{Name of the section}
+
+        \subsection{Name of the sub-section}
+
+        \subsubsection{Name of the sub-sub-section}
+
+        \paragraph{Start of the paragraph}
+    \end{minted}
+\end{frame}
+
+% \begin{frame}[fragile]{<++>}
+%     \begin{minted}[breaklines, autogobble, linenos] {latex}
+%     \end{minted}
+% \end{frame}
+
+\end{document}
